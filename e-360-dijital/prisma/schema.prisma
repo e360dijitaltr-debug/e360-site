@@ -1,0 +1,82 @@
+// Bu dosya bizim veritabanımızın kalbidir. 
+// Tabloları ve sütunları burada tanımlarız.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Veritabanı olarak PostgreSQL yerine, bilgisayarımızda anında çalışacak olan SQLite'ı seçiyoruz.
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// 1. Tablo: Blog Yazıları
+model Blog {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  category  String
+  image     String?  
+  imageAlt  String?  // YENİ: Görsel SEO Alt Metni
+  excerpt   String
+  content   String
+  seoTitle  String?  // YENİ: Google Arama Başlığı
+  seoDesc   String?  // YENİ: Google Arama Açıklaması
+  date      String
+  readTime  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// --- HİZMETLER TABLOSU ---
+model Service {
+  id           String   @id @default(cuid())
+  title        String
+  slug         String   @unique
+  description  String   // Kartta ve Menüde görünecek kısa açıklama
+  icon         String?  // İkon adı (Lucide)
+  
+  // YENİ EKLENEN PREMİUM SAYFA ÖZELLİKLERİ
+  pageTitle    String?  // Lacivert kutunun üstündeki ana başlık
+  pageSubtitle String?  // Başlığın altındaki açıklama metni
+  image        String?  // Lacivert kutunun içindeki JPG/PNG
+  imageAlt     String?  // Resmin SEO etiketi
+  content      String?  // Sayfanın geri kalan HTML içeriği
+  
+  // YENİ EKLENEN SEO ÖZELLİKLERİ
+  seoTitle     String?  // Google'da çıkacak başlık
+  seoDesc      String?  // Google'da çıkacak açıklama
+  
+  order        Int      @default(0) // Menüdeki ve ana sayfadaki sırası
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// --- ANA SAYFA VE SİTE AYARLARI TABLOSU ---
+// Bu tabloda sadece tek bir kayıt ("global") tutacağız.
+model SiteSettings {
+  id            String   @id @default("global")
+  
+  // BEYAZ LOGO (Koyu zeminler için - Footer ve Sayfa en üstü)
+  logoUrl       String?  
+  logoSvg       String?  
+  
+  // SİYAH/RENKLİ LOGO (Açık zeminler için - Aşağı kaydırıldığında)
+  logoDarkUrl   String?  // YENİ: Bilgisayardan yüklenen koyu logo
+  logoDarkSvg   String?  // YENİ: SVG formatındaki koyu logo
+  
+  // Hero Section
+  heroTitle     String?
+  heroSubtitle  String?
+  
+  // Problem Section
+  problemTitle  String?
+  problemDesc   String?
+  
+  // Growth Section
+  growthTitle   String?
+  growthDesc    String?
+  
+  updatedAt     DateTime @updatedAt
+}
