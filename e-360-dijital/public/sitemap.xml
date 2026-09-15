@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://e360dijital.com/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
+  <!-- Kurumsal -->
+  <url>
+    <loc>https://e360dijital.com/hakkimizda</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog Ana Sayfası (Botlar bu sayfa üzerinden 50 blog yazını bulacak) -->
+  <url>
+    <loc>https://e360dijital.com/blog</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Hizmetlerimiz -->
+  <url>
+    <loc>https://e360dijital.com/hizmetler/meta-ads</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/google-ads</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/e-ihracat</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/video</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/yapay-zeka</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/sosyal-medya</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://e360dijital.com/hizmetler/web-yazilim</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
